@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AngularBigBang.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pusername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dusername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pusername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dusername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Appointmentid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Appointmentid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Appointmentid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
