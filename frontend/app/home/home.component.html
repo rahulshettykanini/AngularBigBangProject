@@ -1,0 +1,79 @@
+<body style="background-color: aquamarine;">
+ 
+
+
+<h1 class="d">DOCTOR DETAILS</h1>
+
+
+
+
+<div class="row mar">
+<ng-container *ngFor="let doctor of doctors">
+    <div class="col-lg-6 mb-4" style="width: 22rem;">
+        <div class="card" style="margin: 20px 40px;">
+            <img class="card-img-top hig" src="../../assets/{{doctor.name}}.jpg" alt="Card image" >
+                <div class="card-body" style="line-height:20px;">
+                    <p class="card-text"><span>Doctor Name : </span>{{doctor.name}}</p>
+                <p class="card-text"><span> Doctor Id : </span>{{doctor.userName}}</p>
+                <p class="card-text"><span>Specialization : </span>{{doctor.specialization}}</p>
+                <p class="card-text"><span>Number of Years Experienced : </span>{{doctor.experiance}}</p>
+                <p class="card-text"><span>Gender : </span>{{doctor.gender}}</p>
+                <p class="card-text"><span>Email ID : </span>{{doctor.email}}</p>
+                </div>
+        </div>
+    </div>
+</ng-container>
+</div>
+<div class="fresh">
+
+<div class="fresh1">
+<h1 class="dd vvv" >BOOK APPOINTMENT</h1>
+
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="border border-secondary bg-light p-4">
+          <div class="form-group">
+            <label for="carType">Doctor Username</label>
+            <input id="carType" class="form-control" [(ngModel)]="newappointment.dusername" [ngModelOptions]="{standalone: true}" placeholder="Enter Doctor Username">
+          </div>
+          <div class="form-group">
+            <label for="price">Your Age</label>
+            <input id="price" class="form-control" [(ngModel)]="newappointment.age" [ngModelOptions]="{standalone: true}" placeholder="Enter your age">
+          </div>
+          <div class="form-group">
+            <label for="availability">Appointment Date and Time</label>
+            <input type="datetime-local" id="availability" class="form-control" [(ngModel)]="newappointment.date" [ngModelOptions]="{standalone: true}" placeholder="Enter Appointment Date and Time">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div>
+
+  <div class="text-center">
+    <button class="btn btn-primary btn-lg rounded-pill border border-primary px-4 py-2 uuu" (click)="BookAppointmentById()">
+      Book Appointment
+    </button>
+  </div>
+  
+</div>
+<br>
+</div>
+<div class="fresh1">
+<h1 class="dd vvv" >CLICK HERE TO UPDATE APPOINTMENT</h1>
+
+  <div class="text-center">
+    <button class="btn btn-primary btn-lg rounded-pill border border-primary px-4 py-2 uuu" (click)="update()">
+      Update Appointment
+    </button>
+  </div>
+
+</div>
+</div>
+
+</body>
+

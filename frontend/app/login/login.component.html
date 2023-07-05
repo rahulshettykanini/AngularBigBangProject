@@ -1,0 +1,69 @@
+
+
+
+
+<div class="new">
+<div style=" background-color: aqua;" class ="new1 new3">
+    <table class="dist">
+        <tr>
+            <td><label class="form-control">UserID</label></td>
+            <td><input class="form-control a" 
+                required [min]="1" 
+                type="text" 
+                [(ngModel)]= "user.userName"
+                #iname="ngModel"
+                placeholder="Enter your user name">
+            </td>
+            <td>
+                <span *ngIf="iname.touched && iname.invalid" class="alert alert-danger">
+                    <span *ngIf="iname.errors?.['required']"> Id cannot be empty</span>
+                    <span  *ngIf="iname.errors?.['min']">Should not be less than 1</span> 
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control">Password</label></td>
+            <td><input class="form-control a" type="text"
+                required
+                minlength="1"
+                 [(ngModel)]="user.password"
+                 #iname="ngModel"
+                 placeholder="Enter your Password">
+            </td>
+            <td>
+                 <span *ngIf="iname.touched && iname.invalid" class="alert alert-danger">
+                    <span *ngIf="iname.errors?.['required']"> Password cannot be empty</span>
+                    <span  *ngIf="iname.errors?.['minlength']">Password should be min 20 chars long</span> 
+                 </span>
+            </td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-success" (click)="addUser()">LogIN</button></td>
+            <td><button class="btn btn-danger b">Cancel</button></td>
+        </tr>
+        
+        <tr >
+            <td colspan="2">Don't have an Account</td>
+        </tr>
+       
+        <tr>
+            <td colspan="2"><button class="btn btn-primary" (click)="register()">Register</button></td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" *ngIf="toggle">Invalid Credentials</td>
+        </tr>
+    </table>
+
+</div>
+
+<div  class="new4 " >
+
+<img src="../../assets/happy.jpg" alt="" class="new2 ">
+
+</div>
+
+</div>
+
+
+

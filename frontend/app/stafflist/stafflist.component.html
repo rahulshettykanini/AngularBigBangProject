@@ -1,0 +1,30 @@
+<div id="title">STAFF DETAILS</div>
+
+<table class="table">
+    <thead >
+        <tr >
+            <th class="two" scope="col">staff Name</th>
+            <th class="two" scope="col">EmailId</th>
+            <th class="two" scope="col">Username</th>
+            <th class="two" scope="col">Gender</th>
+            <th class="two" scope="col">Specialization</th>
+            <th class="two" scope="col">Experience</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let staff of stafflist">
+            <td class="one">{{staff.name}}</td>
+            <td class="one">{{staff.email}}</td>
+            <td class="one">{{staff.userName}}</td>
+            <td class="one">{{staff.gender}}</td>
+            <td class="one">{{staff.specialization}}</td>
+            <td class="one">{{staff.experience}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+

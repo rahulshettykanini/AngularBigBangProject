@@ -1,0 +1,142 @@
+
+
+
+
+<div class="baby1">
+<div style="background-color: aqua;" class="baby2">
+  <form>
+    <table>
+      <tr>
+        <td><label class="form-control">Name</label></td>
+        <td>
+          <input class="form-control"
+                 required
+                 pattern="^[a-zA-Z\s]+$"
+                 type="text"
+                 placeholder="Full Name"
+                 
+                 name="name"
+                 #name="ngModel" [(ngModel)]="intern.name">
+        </td>
+        <td>
+          <span *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert alert-danger">
+            <span *ngIf="name.errors?.['required']">Name shouldn't be empty</span>
+            <span *ngIf="name.errors?.['pattern']">Name should contain only letters</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="form-control">Username</label></td>
+        <td>
+          <input class="form-control"
+                 required
+                 pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$"
+                 type="text"
+                 
+                 name="username"
+                 placeholder="User Name"
+                 #username="ngModel" [(ngModel)]="intern.userName">
+        </td>
+        <td>
+          <span *ngIf="username.invalid && (username.dirty || username.touched)"
+                class="alert alert-danger">
+            <span *ngIf="username.errors?.['required']">Username shouldn't be empty</span>
+            <span *ngIf="username.errors?.['pattern']">Username should contain one capital letter, one special character, and at least one number</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="form-control">Password</label></td>
+        <td>
+          <input class="form-control"
+                 required
+                 pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                 type="password"
+                 name="password"
+                 placeholder="Password"
+                 #password="ngModel" [(ngModel)]="intern.userPassword">
+        </td>
+        <td>
+          <span *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="alert alert-danger">
+            <span *ngIf="password.errors?.['required']">Password shouldn't be empty</span>
+            <span *ngIf="password.errors?.['pattern']">Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="form-control">Email</label></td>
+        <td>
+          <input class="form-control"
+                 type="email"
+                 [(ngModel)]="intern.email"
+                 name="email"
+                 placeholder="Email">
+        </td>
+      </tr>
+      <tr>
+        <td><label class="form-control">Gender</label></td>
+        <td>
+          <select class="form-control"
+                  [(ngModel)]="intern.gender"
+                  name="gender"
+                  required>
+            <option value="" disabled selected hidden>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="form-control">Role</label></td>
+        <td>
+          <select class="form-control"
+                  [(ngModel)]="intern.role"
+                  name="role"
+                  required
+                  (change)="onRoleChange()">
+            <option value="" disabled selected hidden>Select Role</option>
+            <option value="user">User</option>
+            <option value="doctor">Doctor</option>
+          </select>
+        </td>
+      </tr>
+      <tr *ngIf="show === 'doctor'">
+        <td><label class="form-control">Specialization</label></td>
+        <td>
+          <input class="form-control"
+                 type="text"
+                 [(ngModel)]="doctor.specialization"
+                 name="specialization"
+                 placeholder="Specialization">
+        </td>
+      </tr>
+      <tr *ngIf="show === 'doctor'">
+        <td><label class="form-control">Experience</label></td>
+        <td>
+          <input class="form-control"
+                 type="number"
+                 [(ngModel)]="doctor.experiance"
+                 name="experience"
+                 placeholder="Experience">
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-success" (click)="addIntern()" [disabled]="!isValidForm()">Register</button></td>
+        <td><button class="btn btn-danger">Cancel</button></td>
+      </tr>
+      <tr class="down">
+        <td colspan="2">Already have an Account</td>
+        <td><button class="btn btn-primary" (click)="login()" >Login</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div class="baby3">
+  <img src="../../assets/baby.jpg" alt="" class="baby4">
+</div>
+</div>
+
+

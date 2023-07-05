@@ -1,0 +1,115 @@
+<header>
+    <div class="headpart d-flex justify-content-between">
+        <div class="logo_1">
+            <a href="#"><img src="../../assets/hos.webp" alt="logo1" width="120px" class="rounded-circle"></a>
+        </div>
+        <div class="title">
+            <h1 style="color: #ffffff;">MEDICURE <span class="title_2">HEALTHCARE</span></h1>
+        </div>
+        
+        <div class="logo_2">
+            <img src="../../assets/doc.jpg" alt="logo2" width="100px" class="rounded-circle">
+        </div>
+        <div class="logo_3">
+            <img src="../../assets/nabh.png" alt="logo3" width="100px" class="rounded-circle">
+        </div>
+    </div>
+  </header>
+  
+
+
+<nav class="navbar navbar-expand-md">
+    <div class="main_menu" id="ooo">
+      <ul name="main_nav" class="main_nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <!-- <a href="/" class="content nav-link">Home</a> -->
+          <li><a routerLink="/" class="content nav-link">Home</a></li>
+          <li><a *ngIf="role == 'user'" routerLink="/home" class="content nav-link">User</a></li>
+          <li><a *ngIf="role == 'doctor'" routerLink="/staff" class="content nav-link">Staff</a></li>
+          <li><a *ngIf="role == 'admin'" routerLink="/admin" class="content nav-link">Admin</a></li>
+
+
+          
+        <li class="nav-item dropdown">
+        <a href="#" class="content nav-link dropdown-toggle" data-toggle="dropdown">PATIENT CARE</a>
+        <div class="dropdown-menu">
+          <!-- <a href="/benifits" class="dropdown-item">Service Excellence</a> -->
+          <li><a routerLink="/benifits" class="dropdown-item">Service Excellence</a></li>
+          <!-- <a href="/health" class="dropdown-item">Health and Lifestyle</a> -->
+          <li><a routerLink="/health" class="dropdown-item">health and lifestyle</a></li>
+
+         </div>
+        
+         
+        <li class="nav-item dropdown">
+        <a href="#" class="content nav-link dropdown-toggle" data-toggle="dropdown">CENTRE OF EXCELLENCE</a>
+        <div class="dropdown-menu">
+          <!-- <a href="/ortho" class="dropdown-item">Orthopedics</a> -->
+          <li><a routerLink="/ortho" class="dropdown-item">orthopedics</a></li>
+
+
+          <!-- <a href="/spine" class="dropdown-item">Spine</a> -->
+          <li><a routerLink="/spine" class="dropdown-item">spine</a></li>
+
+          
+          <!-- <a href="/cardio" class="dropdown-item">Cardiology</a> -->
+          <li><a routerLink="/cardio" class="dropdown-item">cardiology</a></li>
+
+        
+
+          
+
+         
+         </div>
+       
+        <li class="nav-item dropdown">
+          <!-- <a href="/logIN" class="content nav-link">LOGIN</a> -->
+          <li *ngIf="role == ''"><a routerLink="/logIN"  class="content nav-link">LOGIN</a></li>
+
+          
+  
+         <li class="nav-item dropdown">
+           <a (click) = 'logoutpage()' *ngIf = "role !== ''" class="content nav-link">LOGOUT</a>
+         </li>
+
+         
+         
+      </ul>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>
+
+
+<footer id="footer" class="bg-info">
+    <div class="footer1">
+    <div>
+        <a href="#">Privacy Policy |</a>
+        <a href="#">Discalimer |</a>
+        <a href="#">Sitemap </a>
+  
+    </div>
+    <div class="social_media">
+        <p>Follow us on</p>
+        <a href="https://instagram.com/theapollohospitals">
+            <img src="../../assets/insta.jpg"  width="40">
+        </a>
+        <a href="https://www.youtube.com/user/apollohospitalsindia">
+            <img src="../../assets/youtube.jpg"  width="40">
+        </a>
+        <a href="https://twitter.com/HospitalsApollo">
+            <img src="../../assets/twitter.jpg"  width="40">
+        </a>
+        <a href="https://www.facebook.com/TheApolloHospitals">
+            <img src="../../assets/facebook.jpg" width="40" height="40">
+        </a>
+        <a href="https://www.linkedin.com/company/apollo-hospitals">
+            <img src="../../assets/linkedin.jpg"  width="40" >
+        </a>
+    </div>
+  </div>
+    <div class="paraf">
+        <p > Copyrights 2023 All Rights Reserved..</p>
+    </div>
+  </footer>
+  
